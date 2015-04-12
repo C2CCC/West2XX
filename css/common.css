@@ -1,0 +1,15 @@
+@charset "utf-8";
+.header{width: 100%; height: 99px; background-color: whitesmoke; min-width: 960px;}
+.logo{float: left; width: 175px; height: 45px; margin: 10px 20px; background-color: goldenrod;}
+.login{float: right; margin-right: 10px; margin-top: 5px;}
+.nav{float: left; width: 100%; min-width: 960px; }
+.nav ul{width:960px; height: 45px; margin: auto;}
+.nav ul li{display: inline-block; margin-left: 150px ; line-height: 45px;}
+.ItemNow{font-size: 20px; font-weight: bold; line-height: 35px;}
+.content{width: 100%; min-height: 550px; height: auto; margin: auto; background-color: RGB(76,151,121);}
+.con{background-color: RGB(76,151,121);}
+.edu{width: 960px; min-height: 550px; height: auto; margin: auto; background-color: RGB(76,151,121);}
+.soc{width: 960px; min-height: 550px; height: auto; margin: auto; background-color: greenyellow;}
+.act{width: 960px; min-height: 550px; height: auto; margin: auto; background-color: burlywood;}
+.per{width: 960px; min-height: 550px; height: auto; margin: auto; background-color: aquamarine;}
+.footer{width: 100%; height: 50px; background-color: #F5F5F5;}

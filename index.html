@@ -1,99 +1,74 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/common.css" />
-		<link rel="stylesheet" href="css/c_edu.css" />
 		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-		<script type="text/javascript" src="js/c_slide.js"></script>
-		<script type="text/javascript" src="js/c_edu.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js" ></script>
+		<script type="text/javascript" src="js/c_slide.js" ></script>
+		<script type="text/javascript" src="z_js/masonry-docs.min.js" ></script>
+		<link rel="stylesheet" href="z_style/z_soc.css" />
 		<title>福大助手</title>
+		<script>
+			$('#mason').masonry({
+			  columnWidth: 310,
+			  itemSelector: '.item',
+			  gutter:10
+			});
+			$(window).scroll(function(){
+				var container = document.querySelector('#mason');
+				var msnry = new Masonry( container, {
+				  columnWidth: 310
+				});
+			    var documentTop = $(document).scrollTop();
+			    var windowHeight = $(window).height();
+			    var documentHeight = $(document).height();
+			    //var txt = "windowHeight:"+windowHeight + " |*$*| documentTop:"+documentTop + " |*$*| documentHeight:"+documentHeight;
+			    //当 documentTop >= (documentHeight-windowHeight) 说明滚动条已经滚动到底部了
+			    if(documentTop >= (documentHeight-windowHeight)){
+				      var elems = [];
+					  var fragment = document.createDocumentFragment();
+					  for ( var i = 0; i < 3; i++ ) {
+					    var elem = document.createElement('div');
+					    elem.className = '.item';
+					    fragment.appendChild( elem );
+					    elems.push( elem );
+					  }
+					  // append elements to container
+					  container.appendChild( fragment );
+					  // add and lay out newly appended elements
+					  msnry.appended( elems );
+			    }
+			})
+		</script>
 	</head>
-
 	<body>
 		<div class="header">
 			<span class="logo">
-
 				<img src="#" width="175" height="45" />
-
 			</span>
 			<span class="login">
-
 				<a href="#">登录</a>&nbsp;&brvbar;&nbsp;<a href="#">注册</a>
-
 			</span>
 			<span class="nav">
-
 				<ul id="c_slide">
-
 					<li><a href="#"  class="ItemNow">教务相关</a></li>
-
 					<li><a href="#">活动相关</a></li>
-
 					<li><a href="#">社交相关</a></li>
-
 					<li><a href="#">个人中心</a></li>
-
 				</ul>
-
 			</span>
 		</div>
 		<div id="c_slider">
 			<div class="content">
 				<div class="con">
 					<div class="edu">
-						<!--123456
+						<!--
                         	作者：285391347@qq.com
                         	时间：2015-04-09
                         	描述：教务相关模块
                         -->
-						<ul class="c_indexBlocks">
-							<li>
-								<div class="c_indexIcon">
-									<img src="img/c_plane.png" />
-								</div>
-								<div class="c_indexMask"></div>
-								<span class="c_indexExp">查课表</span>
-							</li>
-							<li>
-								<div class="c_indexIcon">
-									<img src="img/c_book.png" />
-								</div>
-								<div class="c_indexMask"></div>
-								<span class="c_indexExp">查成绩</span>
-							</li>
-							<li>
-								<div class="c_indexIcon">
-									<img src="img/c_loudspeaker.png" />
-								</div>
-								<div class="c_indexMask"></div>
-								<span class="c_indexExp">教务通知</span>
-							</li>
-							<li>
-								<div class="c_indexIcon">
-									<img src="img/c_people.png" />
-								</div>
-								<div class="c_indexMask"></div>
-								<span class="c_indexExp">嘉锡讲坛</span>
-							</li>
-							<li>
-								<div class="c_indexIcon">
-									<img src="img/c_magnifier.png" />
-								</div>
-								<div class="c_indexMask"></div>
-								<span class="c_indexExp">大物实验</span>
-							</li>
-							<li>
-								<div class="c_indexIcon">
-									<img src="img/c_letter.png" />
-								</div>
-								<div class="c_indexMask"></div>
-								<span class="c_indexExp">选课&学分</span>
-							</li>
-						</ul>
 					</div>
 				</div>
 				<div class="con">
@@ -107,11 +82,145 @@
 				</div>
 				<div class="con">
 					<div class="soc">
-						<!--
-                        	作者：285391347@qq.com
-                        	时间：2015-04-09
-                        	描述：社交相关模块
-                        -->
+						<div id="mason"class="js-masonry z_fluid" data-masonry-options='{ "columnWidth": 310, "itemSelector": ".item" }><!--  '-->
+							<div class="item z_box01"><!-- 图片加文本  -->
+								<img src="z_img/z_01.png" class="z_comImg"/>
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_adm">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的、 名字的颜色根据身份选择 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box02"><!-- 纯文本  -->
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_girl">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box01"><!-- 图片加文本  -->
+								<img src="z_img/z_02.png" class="z_comImg"/>
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_boy">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的、 名字的颜色根据身份选择 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box01"><!-- 图片加文本  -->
+								<img src="z_img/z_01.png" class="z_comImg"/>
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_adm">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的、 名字的颜色根据身份选择 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box02"><!-- 纯文本  -->
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_girl">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box02"><!-- 纯文本  -->
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_girl">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box02"><!-- 纯文本  -->
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_none">匿名</a><!-- 点击昵称进入个人资料或者主页什么的 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box01"><!-- 图片加文本  -->
+								<img src="z_img/z_02.png" class="z_comImg"/>
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_boy">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的、 名字的颜色根据身份选择 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box02"><!-- 纯文本  -->
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_none">匿名</a><!-- 点击昵称进入个人资料或者主页什么的 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box01"><!-- 图片加文本  -->
+								<img src="z_img/z_01.png" class="z_comImg"/>
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_adm">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的、 名字的颜色根据身份选择 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+							<div class="item z_box02"><!-- 纯文本  -->
+								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>
+								<span class="z_comCen">
+									<img src="z_img/z_user.png" class="z_uerHea"></img><a href="#" class="z_uerNam z_girl">XXXX</a><!-- 点击昵称进入个人资料或者主页什么的 -->
+									<a href="#" onclick="" class="z_like"></a>
+									<div class="cb"></div>
+								</span>
+								<form enctype="text/plain" class="z_comFor">
+									<input type="text" width="165" height="35" placeholder="快速评论" class="z_comment"/>
+									<a href="#" onclick="" class="z_comSub"></a>
+								</form>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="con">
@@ -126,9 +235,12 @@
 			</div>
 		</div>
 		<div class="footer">
-			<span class="state"></span>
-			<span class="contact"></span>
+			<span class="state">
+				<p>Copyright&copy;西二在线工作室&nbsp;2015</p>
+			</span>
+			<span class="contact">
+				<a href="#"></a>
+			</span>
 		</div>
 	</body>
-
 </html>

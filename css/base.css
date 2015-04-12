@@ -10,7 +10,7 @@ h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal}
 q:before,q:after {content:''}
 abbr,acronym {border:0}
 a{text-decoration: none; color: grey; font-family: "微软雅黑", "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px;}
-
+p{font-family: "微软雅黑", "Helvetica Neue",Helvetica,Arial,sans-serif; }
 /*文字排版*/
 .f9{font-size:9px}
 .f11{font-size:11px}

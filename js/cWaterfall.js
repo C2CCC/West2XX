@@ -1,6 +1,6 @@
 /*
  *
- * 临时版本，无响应式，带异步加载,3列
+ * 临时版本，无响应式，带ajax加载,请设置ajax中的async为false,3列
  * chrome貌似有兼容性问题
  * C2CCC
  *
@@ -19,11 +19,21 @@
 			'margin': opts.gap + 'px' + ' 0 0 ' + opts.gap + 'px',
 			'position': 'absolute'
 		});
-		//定义列高、方格数组
-		columnHeights = [0, 0, 0];
+		//定义列、列高、方格数组
+		var columnNum = Math.floor(opts.containerWidth / (opts.columnWidth + opts.gap));
+		if (columnNum <= 0) {
+			alert('Cannot hold column!');
+			return false;
+		}
+		columnHeights = [];
+		for (var i = 0; i < columnNum; i++) {
+			columnHeights[i] = 0;
+		}
 		var elems = [];
+		elemNum = -1;
 		cW.children().each(function() {
 			elems.push($(this));
+			elemNum++;
 			$(this).css('opacity', '0');
 		});
 		setTimeout(function() {
@@ -77,42 +87,37 @@
 		}
 
 		function findMax(a, b, c) {
-				if (a >= b && a >= c) {
-					return a;
-				} else if (b >= c) {
-					return b;
-				} else return c;
-			}
-			//异步加载更多
+			if (a >= b && a >= c) {
+				return a;
+			} else if (b >= c) {
+				return b;
+			} else return c;
+		}
 
-//		function loadMore() {
-			$(window).scroll(function() {
-				var documentTop = $(document).scrollTop();
-				var windowHeight = $(window).height();
-				var documentHeight = $(document).height();
-				if (documentTop >= (documentHeight - windowHeight)) {
-					var addedElem=[];
-//					alert('load more...');
-					$.ajax({
-						type:"get",
-						url:"data/data.json",
-						async:true,
-						success:function(data){
-							$.each(data.asd, function(key,value) { 
-								cW.append("<div class='item' style='position:absolute;'><p class='z_text'>"+value+"福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p></div>");
-								addedElem.push(cW.children(':last'));
-								cW.children(':last').css('opacity', '0');
-							});
-							calLayout(addedElem);
-						}
-					});
-				}
+		//异步加载更多
+		function loadMoreLayout() {
+			var addedElem = [];
+			cW.children().eq(elemNum).nextAll().each(function() {
+				addedElem.push($(this));
+				$(this).css('opacity', '0');
+				elemNum++;
 			});
-//		}
+			calLayout(addedElem);
+		}
+		$(window).scroll(function() {
+			var documentTop = $(document).scrollTop();
+			var windowHeight = $(window).height();
+			var documentHeight = $(document).height();
+			if (documentTop >= (documentHeight - windowHeight)) {
+				opts.loadMore();
+				loadMoreLayout();
+			}
+		});
 	};
 	$.fn.cWaterfall.defaults = {
 		containerWidth: 960,
 		columnWidth: 280,
-		gap: 30
+		gap: 30,
+		loadMore: function() {}
 	};
 })(jQuery);

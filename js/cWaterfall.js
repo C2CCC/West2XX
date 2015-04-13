@@ -20,7 +20,7 @@
 			'position': 'absolute'
 		});
 		//定义列高、方格数组
-		var columnHeights = [0, 0, 0];
+		columnHeights = [0, 0, 0];
 		var elems = [];
 		cW.children().each(function() {
 			elems.push($(this));
@@ -35,7 +35,7 @@
 				var c = findMin(columnHeights[0], columnHeights[1], columnHeights[2]);
 				var domE = e[i].get(0); //jQuery对象转换为DOM对象
 				var ro = domE.getBoundingClientRect();
-				eHeight = ro.bottom - ro.top;
+				var eHeight = ro.bottom - ro.top;
 				var currBlkHt = eHeight + opts.gap; //当前布局方格高，包括margin
 				var currLeft = c * (opts.columnWidth + opts.gap);
 				var currTop = columnHeights[c];
@@ -84,16 +84,31 @@
 				} else return c;
 			}
 			//异步加载更多
-			//		function loadMore() {
-		$(window).scroll(function() {
-			var documentTop = $(document).scrollTop();
-			var windowHeight = $(window).height();
-			var documentHeight = $(document).height();
-			if (documentTop >= (documentHeight - windowHeight)) {
-				alert('load more...');
-			}
-		});
-		//		}
+
+//		function loadMore() {
+			$(window).scroll(function() {
+				var documentTop = $(document).scrollTop();
+				var windowHeight = $(window).height();
+				var documentHeight = $(document).height();
+				if (documentTop >= (documentHeight - windowHeight)) {
+					var addedElem=[];
+//					alert('load more...');
+					$.ajax({
+						type:"get",
+						url:"data/data.json",
+						async:true,
+						success:function(data){
+							$.each(data.asd, function(key,value) { 
+								cW.append("<div class='item' style='position:absolute;'><p class='z_text'>"+value+"福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p></div>");
+								addedElem.push(cW.children(':last'));
+								cW.children(':last').css('opacity', '0');
+							});
+							calLayout(addedElem);
+						}
+					});
+				}
+			});
+//		}
 	};
 	$.fn.cWaterfall.defaults = {
 		containerWidth: 960,

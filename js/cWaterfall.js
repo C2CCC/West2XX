@@ -1,6 +1,7 @@
 /*
  *
  * 临时版本，无响应式，带异步加载,3列
+ * chrome貌似有兼容性问题
  * C2CCC
  *
  * */
@@ -23,8 +24,11 @@
 		var elems = [];
 		cW.children().each(function() {
 			elems.push($(this));
+			$(this).css('opacity', '0');
 		});
-		calLayout(elems);
+		setTimeout(function() {
+			calLayout(elems);
+		}, 500);
 		//排序
 		function calLayout(e) {
 			for (i in e) {
@@ -37,14 +41,30 @@
 				var currTop = columnHeights[c];
 				e[i].css({
 					'left': currLeft,
-					'top': currTop
+					'top': currTop,
+					'margin-top': '0'
 				});
 				columnHeights[c] += currBlkHt;
 			}
+			//执行动画
+			var i = 0;
+			var anime = {
+				opacity: '1',
+				marginTop: '+=' + opts.gap + 'px'
+			}
+			orderAnimate(e, anime, 100, i);
 			//最后定义容器高度
 			var c = findMax(columnHeights[0], columnHeights[1], columnHeights[2]);
 			cW.css({
 				'height': c + opts.gap + 'px'
+			});
+		}
+
+		function orderAnimate(obj, anime, t, i) {
+			obj[i].animate(anime, t, function() {
+				if (obj[++i]) {
+					orderAnimate(obj, anime, t, i++);
+				}
 			});
 		}
 

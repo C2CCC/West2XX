@@ -15,8 +15,10 @@
 		<link rel="stylesheet" href="z_style/z_soc.css" />
 		<title>福大助手</title>
 		<script>
-			$(document).ready(function(){
-				$("#mason").cWaterfall();
+			$(document).ready(function() {
+				$("#c_slide li").eq(2).click(function() {
+					$("#mason").cWaterfall();
+				});
 			});
 		</script>
 	</head>
@@ -138,7 +140,7 @@
 				<div class="con">
 					<div class="soc">
 						<div id="mason" class="js-masonry z_fluid" data-masonry-options='{ "columnWidth": 310, "itemSelector": ".item" }><!--  ' -->
-							<div class="item z_box01">
+							<div class="item z_box01" id="aaaa">
 								<!-- 图片加文本  -->
 								<img src="z_img/z_01.png" class="z_comImg" />
 								<p class="z_text">福州大学天气4月11日:阴转多云 10～19℃ 明:多云 10～23℃</p>

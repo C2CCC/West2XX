@@ -62,7 +62,7 @@
 				opacity: '1',
 				marginTop: '+=' + opts.gap + 'px'
 			}
-			orderAnimate(e, anime, 100, i);
+			orderAnimate(e, anime, 300, i);
 			//最后定义容器高度
 			var c = findMax(columnHeights[0], columnHeights[1], columnHeights[2]);
 			cW.css({
@@ -71,11 +71,17 @@
 		}
 
 		function orderAnimate(obj, anime, t, i) {
-			obj[i].animate(anime, t, function() {
-				if (obj[++i]) {
-					orderAnimate(obj, anime, t, i++);
+			obj[i].animate(anime, t);
+			if (obj[i + 1]) {
+				obj[++i].delay(t / 3).animate(anime, t);
+				if (obj[i + 1]) {
+					obj[++i].delay(t / 3).animate(anime, t, function() {
+						if (obj[++i]) {
+							orderAnimate(obj, anime, t, i++);
+						}
+					});
 				}
-			});
+			}
 		}
 
 		function findMin(a, b, c) {

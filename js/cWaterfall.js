@@ -112,7 +112,7 @@
 		}
 
 		//异步加载更多
-		function loadMoreLayout() {
+		function loadMoreLayout(callback) {
 			var addedElem = [];
 			cW.children().eq(elemNum).nextAll().each(function() {
 				addedElem.push($(this));
@@ -120,7 +120,7 @@
 				elemNum++;
 			});
 			calLayout(addedElem);
-			$('.cBottomTip').html("下滑加载更多");
+			callback.callback();
 		}
 		$(window).scroll(function() {
 			var documentTop = $(document).scrollTop();
@@ -129,7 +129,11 @@
 			if (documentTop >= (documentHeight - windowHeight)) {
 				$('.cBottomTip').html("加载中...");
 				opts.loadMore();
-				loadMoreLayout();
+				loadMoreLayout({
+					callback: function() {
+						$('.cBottomTip').html("下滑加载更多");
+					}
+				});
 			}
 		});
 	};

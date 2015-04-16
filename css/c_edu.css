@@ -1,3 +1,4 @@
+/*edu index*/
 .c_indexBlocks{
 	width: 1002px;
 	height: 444px;
@@ -51,3 +52,113 @@
 	top: 157px;
 	left: 0;
 }
+
+/*module*/
+.c_innerContent{
+	margin-top: 30px;
+	background: rgb(240,255,255);
+	padding-bottom: 50px;
+}
+.c_goBack{
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid rgb(231,235,239);
+}
+.c_goBack span{
+	position: relative;
+	left: 30px;
+	font-family: "microsoft yahei";
+	font-size: 24px;
+	color: rgb(0,146,199);
+	cursor: pointer;
+}
+.c_goBack span:hover{
+	color: rgb(100,149,237);
+}
+.c_selectContent{
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+	position: relative;
+}
+.c_selectContent span{
+	margin-left: 20px;
+}
+.c_selectContent select{
+	width: 100px;
+	height: 18px;
+}
+table{
+	vertical-align: middle;
+}
+/*edu score*/
+.c_scoreTable{
+	width: 700px;
+	margin: 0 auto;
+}
+.c_scoreTable th,.c_scoreTable td{
+	text-align: center;
+	border: 1px solid rgb(231,235,239);
+	padding: 10px 0;
+}
+.c_scoreTable th{
+	background: rgb(207,207,207);
+}
+.c_scoreTable tr+tr:hover{
+	background: rgba(204,255,170,0.7);
+}
+.c_scoreDanger{
+	background: rgb(255,204,204);
+}
+
+/*edu timetable*/
+.c_refresh{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url(../img/c_refresh.png);
+	cursor: pointer;
+	position: absolute;
+	top: 25px;
+	right: 100px;
+	transition: all 0.9s;
+	-moz-transition: all 0.9s;
+	-webkit-transition: all 0.9s;
+	-o-transition: all 0.9s;
+	-ms-transition: all 0.9s;
+}
+.c_refresh:hover{
+	transform: rotate(720deg);
+	-moz-transform: rotate(720deg);
+	-webkit-transform: rotate(720deg);
+	-o-transform: rotate(720deg);
+	-ms-transform: rotate(720deg);
+}
+.c_timetable{
+	width: 800px;
+	margin: 0 auto;
+}
+.c_timetable th,.c_timetable td{
+	text-align: center;
+	border: 1px solid rgb(231,235,239);
+	padding: 10px 0;
+	font-size: 14px;
+}
+.c_timetable tbody>:first-child{
+	height: 40px;
+}
+.c_timetable tbody tr+tr{
+	height: 170px;
+}
+.c_timetable tbody tr>:first-child{
+	width: 50px;
+}
+.c_timetable tbody tr th+th,.c_timetable tbody tr td+td{
+	width: 107px;
+}
+.c_timetable td+td:hover{
+	background: rgba(204,255,170,0.7);
+}
+
+
+

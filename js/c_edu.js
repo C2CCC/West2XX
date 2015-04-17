@@ -7,8 +7,25 @@ $(document).ready(function() {
 	setColor(4, "rgb(159,224,246)");
 	setColor(5, "rgb(255,140,120)");
 	//点击事件
-	$(".c_indexBlocks li").click(function(){
-		
+	$(".c_indexBlocks li").click(function() {
+		$(".c_indexBlocks").css({
+			'display': 'none',
+			'opacity': '0'
+		});
+		$("#c_eduItem_" + $(this).index()).css('display', 'block');
+		$("#c_eduItem_" + $(this).index()).animate({
+			"opacity": "1"
+		});
+	});
+	$(".c_goBack span").click(function() {
+		$(this).parent().parent().css({
+			'display': 'none',
+			'opacity': '0'
+		});
+		$(".c_indexBlocks").css('display', 'block');
+		$(".c_indexBlocks").animate({
+			"opacity": "1"
+		});
 	});
 });
 

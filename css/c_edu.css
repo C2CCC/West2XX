@@ -1,10 +1,11 @@
 /*edu index*/
-.c_indexBlocks{
+
+.c_indexBlocks {
 	width: 1002px;
 	height: 444px;
-	padding:  76px 0 0 87px;
+	padding: 76px 0 0 87px;
 }
-.c_indexBlocks li{
+.c_indexBlocks li {
 	float: left;
 	width: 142px;
 	height: 172px;
@@ -12,10 +13,11 @@
 	margin: 0 180px 30px 0;
 	position: relative;
 }
-.c_indexIcon,.c_indexMask{
+.c_indexIcon,
+.c_indexMask {
 	width: 130px;
 	height: 130px;
-	border: 6px solid rgb(251,251,251);
+	border: 6px solid rgb(251, 251, 251);
 	border-radius: 100%;
 	margin-bottom: 15px;
 	text-align: center;
@@ -26,93 +28,98 @@
 	-o-transition: all 0.2s;
 	-ms-transition: all 0.2s;
 }
-.c_indexMask{
+.c_indexMask {
 	position: relative;
 	top: -157px;
 	left: 0;
 	z-index: 5;
-	background: rgba(243,243,243,0.2);
+	background: rgba(243, 243, 243, 0.2);
 	opacity: 0;
 }
-.c_indexBlocks li:hover .c_indexMask{
-	border: 10px solid rgb(225,225,225);
+.c_indexBlocks li:hover .c_indexMask {
+	border: 10px solid rgb(225, 225, 225);
 	opacity: 1;
 	width: 122px;
 	height: 122px;
 }
-.c_indexExp{
+.c_indexExp {
 	display: block;
 	width: 142px;
 	text-align: center;
 	font-size: 14px;
 	font-family: "microsoft yahei";
 	font-weight: bold;
-	color: rgb(22,22,22);
+	color: rgb(22, 22, 22);
 	position: absolute;
 	top: 157px;
 	left: 0;
 }
-
 /*module*/
-.c_innerContent{
+
+.c_innerContent {
 	margin: 30px 0 50px 0;
-	background: rgb(240,255,255);
+	background: rgb(240, 255, 255);
 	padding-bottom: 50px;
+	z-index: 100;
+	opacity: 0;
+	display: none;
 }
-.c_goBack{
+.c_goBack {
 	height: 60px;
 	line-height: 60px;
-	border-bottom: 1px solid rgb(231,235,239);
+	border-bottom: 1px solid rgb(231, 235, 239);
 }
-.c_goBack span{
+.c_goBack span {
 	position: relative;
 	left: 30px;
 	font-family: "microsoft yahei";
 	font-size: 24px;
-	color: rgb(0,146,199);
+	color: rgb(0, 146, 199);
 	cursor: pointer;
 }
-.c_goBack span:hover{
-	color: rgb(100,149,237);
+.c_goBack span:hover {
+	color: rgb(100, 149, 237);
 }
-.c_selectContent{
+.c_selectContent {
 	text-align: center;
 	height: 80px;
 	line-height: 80px;
 	position: relative;
 }
-.c_selectContent span{
+.c_selectContent span {
 	margin-left: 20px;
 }
-.c_selectContent select{
+.c_selectContent select {
 	width: 100px;
 	height: 18px;
 }
-table{
+table {
 	vertical-align: middle;
-}
-/*edu score*/
-.c_scoreTable{
-	width: 700px;
 	margin: 0 auto;
 }
-.c_scoreTable th,.c_scoreTable td{
+table th,
+table td {
 	text-align: center;
-	border: 1px solid rgb(231,235,239);
+	border: 1px solid rgb(231, 235, 239);
 	padding: 10px 0;
 }
-.c_scoreTable th{
-	background: rgb(207,207,207);
-}
-.c_scoreTable tr+tr:hover{
-	background: rgba(204,255,170,0.7);
-}
-.c_scoreDanger{
-	background: rgb(255,204,204);
-}
+/*edu score*/
 
+.c_scoreTable {
+	width: 700px;
+}
+.c_scoreTable th {
+	background: rgb(207, 207, 207);
+}
+.c_scoreTable tr+tr:hover {
+	background: rgba(204, 255, 170, 0.7);
+}
+.c_scoreDanger {
+	background: rgb(255, 204, 204);
+}
 /*edu timetable*/
-.c_refresh{
+
+.c_refresh {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
@@ -127,38 +134,61 @@ table{
 	-o-transition: all 0.9s;
 	-ms-transition: all 0.9s;
 }
-.c_refresh:hover{
+.c_refresh:hover {
 	transform: rotate(720deg);
 	-moz-transform: rotate(720deg);
 	-webkit-transform: rotate(720deg);
 	-o-transform: rotate(720deg);
 	-ms-transform: rotate(720deg);
 }
-.c_timetable{
+.c_timetable {
 	width: 800px;
-	margin: 0 auto;
 }
-.c_timetable th,.c_timetable td{
-	text-align: center;
-	border: 1px solid rgb(231,235,239);
-	padding: 10px 0;
+.c_timetable th,
+.c_timetable td {
 	font-size: 14px;
 }
-.c_timetable tbody>:first-child{
+.c_timetable tbody>:first-child {
 	height: 40px;
 }
-.c_timetable tbody tr+tr{
+.c_timetable tbody tr+tr {
 	height: 170px;
 }
-.c_timetable tbody tr>:first-child{
+.c_timetable tbody tr>:first-child {
 	width: 50px;
 }
-.c_timetable tbody tr th+th,.c_timetable tbody tr td+td{
+.c_timetable tbody tr th+th,
+.c_timetable tbody tr td+td {
 	width: 107px;
 }
-.c_timetable td+td:hover{
-	background: rgba(204,255,170,0.7);
+.c_timetable td+td:hover {
+	background: rgba(204, 255, 170, 0.7);
 }
+.c_credit{
+	width: 880px;
+	margin-top: 50px;
+	font-size: 13px;
+}
+.c_credit th{
+	background: rgb(207, 207, 207);
+}
+.c_credit td:hover{
+	background: rgba(204, 255, 170, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

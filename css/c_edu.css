@@ -164,31 +164,30 @@ table td {
 .c_timetable td+td:hover {
 	background: rgba(204, 255, 170, 0.7);
 }
-.c_credit{
+.c_exam {
+	width: 800px;
+	margin-top: 50px;
+}
+.c_exam th,
+.c_exam td {
+	height: 30px;
+}
+.c_exam tbody tr>:first-child {
+	width: 250px;
+}
+.c_exam tr+tr:hover {
+	background: rgba(204, 255, 170, 0.7);
+}
+/*edu credit*/
+
+.c_credit {
 	width: 880px;
 	margin-top: 50px;
 	font-size: 13px;
 }
-.c_credit th{
+.c_credit th {
 	background: rgb(207, 207, 207);
 }
-.c_credit td:hover{
+.c_credit td:hover {
 	background: rgba(204, 255, 170, 0.7);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -146,13 +146,13 @@ table td {
 }
 .c_timetable th,
 .c_timetable td {
-	font-size: 14px;
+	font-size: 12px;
 }
 .c_timetable tbody>:first-child {
 	height: 40px;
 }
 .c_timetable tbody tr+tr {
-	height: 170px;
+	height: 100px;
 }
 .c_timetable tbody tr>:first-child {
 	width: 50px;
@@ -160,6 +160,9 @@ table td {
 .c_timetable tbody tr th+th,
 .c_timetable tbody tr td+td {
 	width: 107px;
+}
+.c_timetable td+td{
+	border-radius: 10px;
 }
 .c_timetable td+td:hover {
 	background: rgba(204, 255, 170, 0.7);

@@ -63,6 +63,7 @@
 	z-index: 100;
 	opacity: 0;
 	display: none;
+	overflow: hidden;
 }
 .c_goBack {
 	height: 60px;
@@ -103,6 +104,14 @@ table td {
 	border: 1px solid rgb(231, 235, 239);
 	padding: 10px 0;
 }
+.c_1stMod {
+	position: relative;
+}
+.c_2ndMod {
+	position: relative;
+	left: 300px;
+	opacity: 0;
+}
 /*edu score*/
 
 .c_scoreTable {
@@ -141,6 +150,10 @@ table td {
 	-o-transform: rotate(720deg);
 	-ms-transform: rotate(720deg);
 }
+.c_2ndModLink {
+	position: relative;
+	left: 765px !important;
+}
 .c_timetable {
 	width: 800px;
 }
@@ -161,15 +174,21 @@ table td {
 .c_timetable tbody tr td+td {
 	width: 107px;
 }
-.c_timetable td+td{
+.c_timetable td+td {
 	border-radius: 10px;
 }
 .c_timetable td+td:hover {
 	background: rgba(204, 255, 170, 0.7);
 }
+.c_erMod {
+	display: none;
+}
 .c_exam {
 	width: 800px;
 	margin-top: 50px;
+}
+.c_exam th{
+	background: rgb(207,207,207);
 }
 .c_exam th,
 .c_exam td {
@@ -180,6 +199,44 @@ table td {
 }
 .c_exam tr+tr:hover {
 	background: rgba(204, 255, 170, 0.7);
+}
+/*timetable color group*/
+
+.c_ttC1 {
+	background: #64c0e5;
+}
+.c_ttC2 {
+	background: #f3c872;
+}
+.c_ttC3 {
+	background: #aea2da;
+}
+.c_ttC4 {
+	background: #84d2d3;
+}
+.c_ttC5 {
+	background: #f6a1a1;
+}
+.c_ttC6 {
+	background: #98d261;
+}
+.c_ttC7 {
+	background: #f5ab8a;
+}
+.c_ttC8 {
+	background: #8daae5;
+}
+.c_ttC9 {
+	background: #7ac0a4;
+}
+.c_ttC10 {
+	background: #d1a995;
+}
+.c_ttC11 {
+	background: #e596ac;
+}
+.c_ttC12 {
+	background: #99b8ce;
 }
 /*edu credit*/
 
